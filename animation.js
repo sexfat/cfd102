@@ -211,8 +211,27 @@ tl.to('.timeline' , 1 , {
     x: 400,
     y: 400,
     scale: 2,
-    delay : -1
+    delay : -1,
+    onComplete : alerts
  })
+
+function alerts(){
+   // console.log('動畫執行完成');
+   alert('動畫完成');
+}
+
+
+
+ var tl_c = new TimelineMax({
+   onComplete : alerts
+ })
+
+
+tl_c.to('.callback' , 1 , {
+   x: 600,
+   repeat: 2
+})
+
 
 
 

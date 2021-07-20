@@ -21,19 +21,25 @@
 <script>
   
    var tl = new TimelineMax();
-   tl.to('.top' , .3 , {
+   tl.to('.top' , .1 , {
        rotation : 45,
+       y: 12,
        transformOrigin : 'center'
-
-   }).to('.middle' , .3 ,{
+   }).to('.middle' , .2 ,{
           x: 20,
           alpha : 0 
-   }).to('.bottom' , .3, {
+   }).to('.bottom' , .2, {
      rotation : -45,
+       y: -12,
        transformOrigin : 'center'
    })
 
-   var nav = new TimelineMax();
+
+
+// 
+   var nav = new TimelineMax({
+      reversed: true
+   });
 
     nav.to('.nav' ,1 , {
        x: 300
@@ -54,16 +60,12 @@
    }
 
 
-document.getElementById('nav').onclick = function(){
-    nav.play();
-}
 // document.getElementById('nav').onclick = function(){
-//    if(!tl.reversed){
-//     nav.reverse();
-//    }else{
-//       nav.play();
-//    }
+//     nav.play();
 // }
+document.getElementById('nav').onclick = function(){
+     nav.reversed()?  nav.play() : nav.reverse();
+}
     
 </script>
 
