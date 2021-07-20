@@ -125,7 +125,7 @@ btn.addEventListener('click', function () {
 
 // 動畫控制
 
-
+// find btn
  const  playBtn = document.getElementById("playBtn"),
         pauseBtn = document.getElementById("pauseBtn"),
         reverseBtn = document.getElementById("reverseBtn"),
@@ -134,9 +134,10 @@ btn.addEventListener('click', function () {
         timeScaleNormalBtn = document.getElementById("timeScaleNormalBtn"),
         timeScaleFastBtn = document.getElementById("timeScaleFastBtn"),
         restartBtn = document.getElementById("restartBtn"),
+        stopBtn = document.getElementById("stopBtn"),
 
 
-
+// 動畫
 
 tweens = TweenMax.to('.control' ,1 , {
    x: 400,
@@ -144,14 +145,12 @@ tweens = TweenMax.to('.control' ,1 , {
    yoyo: true
 });
 
-
-
+// 控制 元件
 
 
 playBtn.addEventListener('click' ,function(){
    tweens.play();
 })
-
 
 pauseBtn.addEventListener('click' ,function(){
    tweens.pause();
@@ -177,9 +176,9 @@ timeScaleFastBtn.addEventListener('click' ,function(){
    tweens.timeScale(2);
 })
 
-// reverseBtn.addEventListener('click' ,function(){
-//    tweens.reverse();
-// })
+restartBtn.addEventListener('click' ,function(){
+   tweens.restart();
+})
 
 
 
