@@ -14,7 +14,33 @@
         <div class="bar middle"></div>
         <div class="bar bottom"></div>
     </div>
+    <div class="nav">
+     選單項目
+    </div>
+ 
 <script>
+  
+   var tl = new TimelineMax();
+   tl.to('.top' , .3 , {
+       width: '40px'
+   }).to('.middle' , .3 ,{
+       width: '60px' 
+   }).to('.bottom' , .3, {
+       width:'30px'
+   })
+
+
+//  動畫停止
+   tl.stop();
+
+// 事件進來   
+   document.getElementById('nav').onmouseover = function(){
+      tl.play();
+   }
+// 事件離開
+    document.getElementById('nav').onmouseleave = function(){
+      tl.reverse();
+   }
    
 
 </script>
