@@ -37,3 +37,12 @@ section {
    left:  300px;
 
 }
+
+
+.tween {
+  width: 600px;
+  height: 100px;
+  font-size: 50px;
+  opacity: 1;
+  background-color: rgb(219, 28, 28);
+}

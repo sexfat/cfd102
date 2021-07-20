@@ -74,4 +74,32 @@ TweenMax.to('.yoyo', 4, {
     // ease: SlowMo.ease
 });
 
+// 透明度
+TweenMax.to('.alpha', 4, {
+    x: 600,
+    y: 600,
+    alpha : 0,
+    repeat: 1,
+    yoyo: true
+
+    // ease: SlowMo.ease
+});
+
+
+TweenMax.to('.add ', 1 , {
+//    className : 'tween'
+   className : '+=tween'
+})
+
+
+// ====  stagger =====
+// https://greensock.com/docs/v2/TweenMax/static.staggerTo()
+
+
+
+
+
+
+
+
 
