@@ -27,22 +27,22 @@ TweenMax.fromTo('.basic4', 1, { x: 100, y: 100 }, { x: 400, y: 500 })
 //     // ease : SlowMo.ease
 // });
 
-TweenMax.to('.rotation1', 2, {
-   // rotation: 180,
-  //transformOrigin : 'right top',
-    scale : 3,
-    border:"10px solid rgb(0,255,0)",
-    boxShadow:"0px 0px 20px 20px",
-    borderRadius:"50% 50%",
-    ease: Elastic.easeOut
-    // ease : SlowMo.ease
-});
+// TweenMax.to('.rotation1', 2, {
+//    // rotation: 180,
+//   //transformOrigin : 'right top',
+//     scale : 3,
+//     border:"10px solid rgb(0,255,0)",
+//     boxShadow:"0px 0px 20px 20px",
+//     borderRadius:"50% 50%",
+//     ease: Elastic.easeOut
+//     // ease : SlowMo.ease
+// });
 
 // https://greensock.com/docs/v2/Plugins/CSSPlugin
 
 
 
-
+/// =====時間軸
 
 // TweenMax.to('.scale', 4, {
 //     x: 400,
@@ -53,5 +53,25 @@ TweenMax.to('.rotation1', 2, {
 //     //    ease: Elastic.easeOut 
 //     ease: SlowMo.ease
 // });
+
+
+// TweenMax.to('.delay', 4, {
+//     x: 400,
+//     y: 400,
+//     scale : 4, 
+//     delay : .5,
+//     repeat : 1,
+//     repeatDelay : 1,
+//     ease: SlowMo.ease
+// });
+
+TweenMax.to('.yoyo', 4, {
+    x: 600,
+    y: 600,
+    repeat : 1,
+    yoyo : true
+
+    // ease: SlowMo.ease
+});
 
 
