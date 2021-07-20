@@ -157,6 +157,32 @@ pauseBtn.addEventListener('click' ,function(){
    tweens.pause();
 })
 
+reverseBtn.addEventListener('click' ,function(){
+   tweens.reverse();
+})
+
+seekBtn.addEventListener('click' ,function(){
+   tweens.seek(2.2);
+})
+
+timeScaleSlowBtn.addEventListener('click' ,function(){
+   tweens.timeScale(0.5);
+})
+
+timeScaleNormalBtn.addEventListener('click' ,function(){
+   tweens.timeScale(1);
+})
+
+timeScaleFastBtn.addEventListener('click' ,function(){
+   tweens.timeScale(2);
+})
+
+// reverseBtn.addEventListener('click' ,function(){
+//    tweens.reverse();
+// })
+
+
+
       
 
 
