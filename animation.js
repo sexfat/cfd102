@@ -123,6 +123,46 @@ btn.addEventListener('click', function () {
 })
 
 
+// 動畫控制
+
+
+ const  playBtn = document.getElementById("playBtn"),
+        pauseBtn = document.getElementById("pauseBtn"),
+        reverseBtn = document.getElementById("reverseBtn"),
+        seekBtn = document.getElementById("seekBtn"),
+        timeScaleSlowBtn = document.getElementById("timeScaleSlowBtn"),
+        timeScaleNormalBtn = document.getElementById("timeScaleNormalBtn"),
+        timeScaleFastBtn = document.getElementById("timeScaleFastBtn"),
+        restartBtn = document.getElementById("restartBtn"),
+
+
+
+
+tweens = TweenMax.to('.control' ,1 , {
+   x: 400,
+   repeat: -1,
+   yoyo: true
+});
+
+
+
+
+
+playBtn.addEventListener('click' ,function(){
+   tweens.play();
+})
+
+
+pauseBtn.addEventListener('click' ,function(){
+   tweens.pause();
+})
+
+      
+
+
+
+
+
 
 
 
