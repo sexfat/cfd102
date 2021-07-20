@@ -73,11 +73,26 @@ new ScrollMagic.Scene({
     duration: '400%' // 時間軸
 
 
-}).setPin('.section04')
+}).setPin('.section04')// 
   .setTween(sticky)
   .addIndicators()
   .addTo(controller)
 
+
+
+
+new ScrollMagic.Scene({
+    triggerElement : '#trigger04',// 觸發點  
+    triggerHook: '0', // 0 ~ 1
+    duration: '100%'
+
+}).on('enter' ,function(){
+     console.log('場景進入')
+   }).on('leave' , function(){
+     console.log('離開')
+   }) 
+  .addIndicators()
+  .addTo(controller)
 
 
 
