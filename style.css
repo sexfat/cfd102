@@ -78,6 +78,17 @@ h2 {
 
 }
 
+.section04 .text {
+  width: 100vw;
+  height: 25vh;
+  position: relative;
+  margin-bottom: 5px;
+  font-size: 20px;
+  background-color: #505050;
+}
+
+
+
 
 
 /* #trigger01 {
