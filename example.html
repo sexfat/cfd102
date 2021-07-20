@@ -39,13 +39,12 @@
         right: 0
      }).to('nav' , .3 , {
          height: '100vh'
+     }).to('.close_bar' , .3 , {
+         opacity: 1,
      }).staggerTo('nav ul li' , .3 , {
         opacity : 1,
-        delay: -.2
-     }, .3).to('.close_bar' , .3 , {
-         opacity: 1,
-         delay: -.15
-     })
+        delay: -.3
+     }, .3)
      
       tl.stop();
 
