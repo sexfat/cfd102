@@ -22,16 +22,27 @@
   
    var tl = new TimelineMax();
    tl.to('.top' , .3 , {
-       width: '40px'
+       rotation : 45,
+       transformOrigin : 'center'
+
    }).to('.middle' , .3 ,{
-       width: '60px' 
+          x: 20,
+          alpha : 0 
    }).to('.bottom' , .3, {
-       width:'30px'
+     rotation : -45,
+       transformOrigin : 'center'
    })
+
+   var nav = new TimelineMax();
+
+    nav.to('.nav' ,1 , {
+       x: 300
+    })
 
 
 //  動畫停止
    tl.stop();
+   nav.stop();
 
 // 事件進來   
    document.getElementById('nav').onmouseover = function(){
@@ -41,8 +52,19 @@
     document.getElementById('nav').onmouseleave = function(){
       tl.reverse();
    }
-   
 
+
+document.getElementById('nav').onclick = function(){
+    nav.play();
+}
+// document.getElementById('nav').onclick = function(){
+//    if(!tl.reversed){
+//     nav.reverse();
+//    }else{
+//       nav.play();
+//    }
+// }
+    
 </script>
 
 </body>

@@ -29,6 +29,33 @@
    </div>
 </body>
  <script>
+
+    var tl = new TimelineMax();
+     
+     var open = document.querySelector('.bar');
+     var close = document.querySelector('.close_bar');
+
+     tl.to('nav' , .3 , {
+        right: 0
+     }).to('nav' , .3 , {
+         height: '100vh'
+     }).staggerTo('nav ul li' , .3 , {
+        opacity : 1,
+        delay: -.2
+     }, .3).to('.close_bar' , .3 , {
+         opacity: 1,
+         delay: -.15
+     })
+     
+      tl.stop();
+
+      open.addEventListener('click' , function(){
+         tl.play();
+      })
+
+      close.addEventListener('click' , function(){
+         tl.reverse();
+      })
   
 </script>
 
