@@ -50,6 +50,36 @@ new ScrollMagic.Scene({
   .addTo(controller)
 
 
+// 固定住場景
+
+
+var sticky = new TimelineMax(); 
+
+sticky.to('.area1' ,1 , {
+   x:'100%' 
+}).to('.area2' ,1 , {
+  x: '100%'
+}).to('.area3' ,1 , {
+  x: '100%'
+}).to('.area4' ,1 , {
+  x: '100%'
+})
+
+
+// 觸發事件
+new ScrollMagic.Scene({
+    triggerElement : '#trigger03',// 觸發點  
+    triggerHook: '0', // 0 ~ 1
+    duration: '400%' // 時間軸
+
+
+}).setPin('.section04')
+  .setTween(sticky)
+  .addIndicators()
+  .addTo(controller)
+
+
+
 
 
 

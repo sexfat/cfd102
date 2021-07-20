@@ -78,6 +78,11 @@ h2 {
 
 }
 
+
+.section04 {
+   background-color: rgb(192, 255, 234);
+}
+
 .section04 .text {
   width: 100vw;
   height: 25vh;
