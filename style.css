@@ -22,3 +22,11 @@ section {
     background-color: #80ff00;
     border-radius: 5px;
 }
+
+.basic2 {
+
+   position: relative;
+   top: 100px;
+   left:  300px;
+
+}
