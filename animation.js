@@ -185,6 +185,15 @@ restartBtn.addEventListener('click' ,function(){
 var tl = new TimelineMax();
 
 
+tl.stop();
+
+timeplayBtn = document.getElementById("btn_time"),
+timeplayBtn.addEventListener('click' ,function(){
+   tl.play();
+})
+
+
+
 tl.to('.timeline' , 1 , {
     x: 100,
 }).to('.timeline' , 1, {
