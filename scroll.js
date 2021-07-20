@@ -18,3 +18,38 @@ new ScrollMagic.Scene({
 .setTween(mv01) // 動畫
 .addIndicators() // 觸發指標
 .addTo(controller); 
+
+//場景三
+
+var mv02 =  TweenMax.fromTo('.mv02' , 1 ,{
+    opacity : 0,
+    y: -40
+},{
+     opacity: 1,
+     y: 0
+});
+
+
+var mv03 =  TweenMax.to('.mv03' , 1 ,{
+    rotation : 360,
+    repeat : -1
+});
+
+
+// 觸發事件
+new ScrollMagic.Scene({
+    triggerElement : '#trigger02',// 觸發點  
+    // offset: '100px', // 改變觸發位置 
+    triggerHook: '0', // 0 ~ 1
+    //duration: '100%' // 時間軸
+    reverse : true // 是否反覆執行動畫
+
+}).setClassToggle('.flex' , 'on')
+  .setTween([mv02 , mv03])//兩段動畫
+  .addIndicators()
+  .addTo(controller)
+
+
+
+
+
