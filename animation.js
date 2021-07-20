@@ -68,8 +68,8 @@ TweenMax.fromTo('.basic4', 1, { x: 100, y: 100 }, { x: 400, y: 500 })
 TweenMax.to('.yoyo', 4, {
     x: 600,
     y: 600,
-    repeat : 1,
-    yoyo : true
+    repeat: 1,
+    yoyo: true
 
     // ease: SlowMo.ease
 });
@@ -78,22 +78,53 @@ TweenMax.to('.yoyo', 4, {
 TweenMax.to('.alpha', 4, {
     x: 600,
     y: 600,
-    alpha : 0,
+    alpha: 0,
     repeat: 1,
     yoyo: true
 
     // ease: SlowMo.ease
 });
 
-
-TweenMax.to('.add ', 1 , {
-//    className : 'tween'
-   className : '+=tween'
+// 增加 class
+TweenMax.to('.add ', 1, {
+    //    className : 'tween'
+    className: '+=tween'
 })
 
 
 // ====  stagger =====
 // https://greensock.com/docs/v2/TweenMax/static.staggerTo()
+
+
+TweenMax.staggerFromTo('.stagger', 1, {
+    x: 100
+}, {
+    x: 400,
+    ease: SlowMo.ease
+}, .6)
+
+
+
+var btn = document.getElementById('playbtn');
+
+
+
+var tween = new TimelineMax();
+
+tween.staggerTo('.menu', 1, {
+        x: 150
+    }, .6);
+
+
+tween.stop();
+
+btn.addEventListener('click', function () {
+    tween.play();
+})
+
+
+
+
 
 
 
