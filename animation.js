@@ -141,6 +141,7 @@ btn.addEventListener('click', function () {
 
 tweens = TweenMax.to('.control' ,1 , {
    x: 400,
+//    scale: 100,
    repeat: -1,
    yoyo: true
 });
@@ -179,6 +180,29 @@ timeScaleFastBtn.addEventListener('click' ,function(){
 restartBtn.addEventListener('click' ,function(){
    tweens.restart();
 })
+
+
+var tl = new TimelineMax();
+
+
+tl.to('.timeline' , 1 , {
+    x: 100,
+}).to('.timeline' , 1, {
+     y: 100
+ }).to('.timeline' , 1 , {
+     x: 200
+ }).to('.timeline' , 1 , {
+    rotation: 180,
+    alpha: 0
+ }).to('.timeline2' , 1 ,{
+    x: 400,
+    y: 400,
+    scale: 2,
+    delay : -1
+ })
+
+
+
 
 
 
