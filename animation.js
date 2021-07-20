@@ -147,8 +147,6 @@ tweens = TweenMax.to('.control' ,1 , {
 });
 
 // 控制 元件
-
-
 playBtn.addEventListener('click' ,function(){
    tweens.play();
 })
@@ -182,11 +180,17 @@ restartBtn.addEventListener('click' ,function(){
 })
 
 
+
+
+// 時間軸動畫
+
 var tl = new TimelineMax();
+
 
 
 tl.stop();
 
+// 控制
 timeplayBtn = document.getElementById("btn_time"),
 timeplayBtn.addEventListener('click' ,function(){
    tl.play();
