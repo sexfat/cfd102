@@ -8,8 +8,18 @@ body {
   background-color: #feffb0;
 }
 
+.container_full {
+  width: 100%;
+}
+
+.section_bgc {
+  background-color: #b9f513;
+}
+
 .container {
   width: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
 }
 
 span {
@@ -18,5 +28,13 @@ span {
 
 h1 {
   color: #0b21eb;
+}
+
+header {
+  height: 100px;
+}
+
+.banner {
+  height: 450px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,10 +1,12 @@
 //變數
+//變數命名語意化
 $fontsize : 17px;//數值
 $fullwidth: 100%;//數值 滿版
+$maxwidth: 1366px;
 $color: rgb(180, 180, 180); //顏色
 $bgcolor: rgb(254, 255, 176);
 $h1_color : #0b21eb;//顏色
-
+$section_bgc: #b9f513;
 
 /*css註解*/
 body {
@@ -14,9 +16,20 @@ body {
   color : $color;
   background-color: $bgcolor;
 }
-.container {
+.container_full {
   width: $fullwidth;
 }
+
+.section_bgc {
+   background-color:$section_bgc;
+}
+
+.container {
+  width: $fullwidth;
+  max-width: $maxwidth;
+  margin: 0 auto; 
+}
+
 span {
   color: $color;
 }
@@ -24,5 +37,15 @@ span {
 h1 {
   color: $h1_color;
 }
+
+
+header {
+  height: 100px;
+}
+
+.banner {
+  height: 450px;
+}
+
 
 
