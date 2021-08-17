@@ -121,11 +121,23 @@ $null : null; // 數值型態 NULL
 @mixin boxspec($margin , $padding:null) {
    margin: $margin;
    padding: $padding;
+   @content; // 外部新增屬性
 }
 
 .esp {
-  @include boxspec(10px) // 可帶值或不帶
+  // 可帶值或不帶
+  @include boxspec(10px){
+  width:  100px;
+  height: 100px;
+  // @include margincenter 
+  }
 }
+
+
+
+
+
+
 
 
 
