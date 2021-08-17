@@ -1,11 +1,11 @@
 //變數
 //變數命名語意化
-$fontsize : 17px;//數值
-$fullwidth: 100%;//數值 滿版
+$fontsize : 17px; //數值
+$fullwidth: 100%; //數值 滿版
 $maxwidth: 1366px;
 $color: rgb(180, 180, 180); //顏色
 $bgcolor: rgb(254, 255, 176);
-$h1_color : #0b21eb;//顏色
+$h1_color : #0b21eb; //顏色
 $section_bgc: #b9f513;
 
 /*css註解*/
@@ -13,21 +13,22 @@ body {
   padding: 0px;
   margin: 0px;
   font-size: $fontsize;
-  color : $color;
+  color: $color;
   background-color: $bgcolor;
 }
+
 .container_full {
   width: $fullwidth;
 }
 
 .section_bgc {
-   background-color:$section_bgc;
+  background-color: $section_bgc;
 }
 
 .container {
   width: $fullwidth;
   max-width: $maxwidth;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
 span {
@@ -38,14 +39,47 @@ h1 {
   color: $h1_color;
 }
 
-
 header {
   height: 100px;
+  display: flex;
+  flex-direction: row;
+
+  .logo {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(165, 165, 165);
+  }
+
+  nav {
+    ul {
+      display: flex;
+      flex-direction: row;
+      li {
+        width: 100px;
+        background-color: rgb(49, 243, 211);
+        a {
+          color: #ff2713;
+          &:hover {
+            color: #000;//偽元素
+          }
+          &::before {
+             content: '';
+          }
+          &::after {
+            content: '';
+         }  
+        }
+      }
+    }
+
+  }
 }
+
+
+
+
+
 
 .banner {
   height: 450px;
 }
-
-
-

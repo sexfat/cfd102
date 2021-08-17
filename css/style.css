@@ -32,6 +32,40 @@ h1 {
 
 header {
   height: 100px;
+  display: flex;
+  flex-direction: row;
+}
+
+header .logo {
+  width: 100px;
+  height: 100px;
+  background-color: #a5a5a5;
+}
+
+header nav ul {
+  display: flex;
+  flex-direction: row;
+}
+
+header nav ul li {
+  width: 100px;
+  background-color: #31f3d3;
+}
+
+header nav ul li a {
+  color: #ff2713;
+}
+
+header nav ul li a:hover {
+  color: #000;
+}
+
+header nav ul li a::before {
+  content: '';
+}
+
+header nav ul li a::after {
+  content: '';
 }
 
 .banner {
