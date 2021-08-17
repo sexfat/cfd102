@@ -184,4 +184,56 @@ h2 {
   width: 100px;
   height: 100px;
 }
+
+.btn {
+  width: 100px;
+  padding: 10px;
+  background-color: #ffa513;
+  text-align: center;
+  color: #000;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .3s all ease;
+}
+
+.btn:hover {
+  background-color: #df8a00;
+  color: white;
+}
+
+.btn-wide {
+  width: 150px;
+  padding: 5px;
+  background-color: #acff13;
+  text-align: center;
+  color: #000;
+  border: 1px solid #21a500;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: .3s all ease;
+  margin-top: 20px;
+}
+
+.btn-wide:hover {
+  background-color: #91df00;
+  color: white;
+}
+
+.btn-error {
+  width: 50px;
+  padding: 8px;
+  background-color: red;
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: .3s all ease;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.btn-error:hover {
+  background-color: #cc0000;
+  color: black;
+}
 /*# sourceMappingURL=style.css.map */

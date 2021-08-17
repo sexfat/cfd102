@@ -138,6 +138,32 @@ $null : null; // 數值型態 NULL
 
 
 
+.btn {
+  @include btn(100px, 10px ,#ffa513 ,#000 , null  , 10px);
+}
+
+
+.btn-wide {
+  @include btn(150px, 5px ,#acff13 ,#000 , 1px solid rgb(33, 165, 0) , 20px){
+    margin-top: 20px;
+  }
+};
+
+.btn-error {
+  @include btn(50px, 8px , rgb(255, 0, 0) ,rgb(255, 255, 255) , null , 5px){
+  margin-top: 20px;
+  // @include margincenter();
+  font-size: 14px;
+  }
+}
+
+
+
+
+
+
+
+
 
 
 

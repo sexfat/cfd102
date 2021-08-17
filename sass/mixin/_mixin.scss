@@ -28,3 +28,21 @@
      font-size: $size;
      line-height: $lineHeight;
   }
+// 按鈕組件
+  @mixin btn($w , $p , $bgc , $color , $border:null , $borderR:null) {
+    width: $w;
+    // width: 100%;
+    padding:$p;
+    background-color: $bgc;
+    text-align: center;
+    color: $color;
+    border:$border;
+    border-radius:$borderR;
+    cursor: pointer;
+    transition: .3s all ease;
+    &:hover {
+      background-color:darken($bgc, 10);
+      color: invert($color);
+    }
+    @content;
+  }
