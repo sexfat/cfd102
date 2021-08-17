@@ -110,6 +110,27 @@ h2 {
   @include flexcenter();
 }
 
+$null : null; // 數值型態 NULL
+
+.box2 {
+  padding: 10px;
+  margin: $null; 
+}
+
+@mixin boxspec($margin , $padding:null) {
+   margin: $margin;
+   padding: $padding;
+}
+
+.esp {
+  @include boxspec(10px)
+}
+
+
+
+
+
+
 
 
 
