@@ -97,7 +97,7 @@ header {
 }
 
 // 置中
-@mixin positioncenter {
+@mixin positioncenter() {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -105,12 +105,22 @@ header {
 }
 
 
+// mixin 帶值
+@mixin title($size , $lineHeight) {
+   font-size: $size;
+   line-height: $lineHeight;
+}
+
+@mixin rect($size) {
+  width: $size;
+}
+
+
 
 .box {
   // 呼叫
-  @include margincenter 
+  @include margincenter; 
 }
-
 .section {
   // @include flexcenter(); 
   @include positioncenter();
@@ -119,9 +129,19 @@ header {
 
 .content {
   @include flexcenter();
-  // @include margincenter();
-
+  @include title(20px , 1.2)
 }
+
+h1 {
+    @include title($fontsize * 4 , 2);
+    @include margincenter();
+}
+
+h2 {
+  @include title($fontsize * 3 , 2);
+  @include margincenter();
+}
+
 
 
 
