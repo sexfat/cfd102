@@ -4,6 +4,10 @@
 @import 'base/font';
 @import 'base/reset';
 
+// mixin
+
+@import 'mixin/mixin';
+
 // LINK scss
 // layout
 @import 'layout/header';
@@ -73,46 +77,15 @@ header {
           &::after {
             content: '';
          }  
+
         }
       }
     }
-
   }
 }
-
 .banner {
+
   height: 450px;
-}
-
-//宣告
-@mixin margincenter {
-  margin: 0 auto; 
-}
-
-// 宣告
-@mixin  flexcenter() {
-  display: flex;
-  justify-content: center;
-  align-items: center; 
-}
-
-// 置中
-@mixin positioncenter() {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(50% , 50%);
-}
-
-
-// mixin 帶值
-@mixin title($size , $lineHeight) {
-   font-size: $size;
-   line-height: $lineHeight;
-}
-
-@mixin rect($size) {
-  width: $size;
 }
 
 
@@ -133,13 +106,13 @@ header {
 }
 
 h1 {
-    @include title($fontsize * 4 , 2);
+    @include title($fontsize * 6 , 2);
     @include margincenter();
 }
 
 h2 {
-  @include title($fontsize * 3 , 2);
-  @include margincenter();
+  @include title($fontsize * 3);
+  @include flexcenter();
 }
 
 
