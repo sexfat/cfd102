@@ -1,12 +1,13 @@
-//變數
-//變數命名語意化
-$fontsize : 17px; //數值
-$fullwidth: 100%; //數值 滿版
-$maxwidth: 1366px;
-$color: rgb(180, 180, 180); //顏色
-$bgcolor: rgb(254, 255, 176);
-$h1_color : #0b21eb; //顏色
-$section_bgc: #b9f513;
+
+@import 'base/var';
+@import 'base/color';
+
+// LINK scss
+// layout
+@import 'layout/header';
+@import 'layout/footer';
+
+
 
 /*css註解*/
 body {

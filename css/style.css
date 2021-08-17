@@ -1,4 +1,13 @@
 @charset "UTF-8";
+header {
+  height: 10px;
+  width: 100%;
+}
+
+footer {
+  background-color: #fff;
+}
+
 /*css註解*/
 body {
   padding: 0px;
