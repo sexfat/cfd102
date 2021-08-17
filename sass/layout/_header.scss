@@ -1,4 +1,6 @@
 header {
   height: 10px;
   width: 100%;
+  @include flexcenter();
+  @include title(20px)
 }

@@ -84,12 +84,8 @@ header {
   }
 }
 .banner {
-
   height: 450px;
 }
-
-
-
 .box {
   // 呼叫
   @include margincenter; 
@@ -98,7 +94,6 @@ header {
   // @include flexcenter(); 
   @include positioncenter();
 }
-
 
 .content {
   @include flexcenter();
@@ -120,6 +115,3 @@ h2 {
 
 
 
-
-// function name(){
-//}
