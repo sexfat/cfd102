@@ -117,13 +117,14 @@ $null : null; // 數值型態 NULL
   margin: $null; 
 }
 
+// null 空值
 @mixin boxspec($margin , $padding:null) {
    margin: $margin;
    padding: $padding;
 }
 
 .esp {
-  @include boxspec(10px)
+  @include boxspec(10px) // 可帶值或不帶
 }
 
 
