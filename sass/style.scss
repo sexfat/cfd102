@@ -1,5 +1,28 @@
+//變數
+$fontsize : 17px;//數值
+$fullwidth: 100%;//數值 滿版
+$color: rgb(180, 180, 180); //顏色
+$bgcolor: rgb(254, 255, 176);
+$h1_color : #0b21eb;//顏色
+
+
+/*css註解*/
 body {
   padding: 0px;
   margin: 0px;
-  background-color: rgb(165, 255, 63);
+  font-size: $fontsize;
+  color : $color;
+  background-color: $bgcolor;
 }
+.container {
+  width: $fullwidth;
+}
+span {
+  color: $color;
+}
+
+h1 {
+  color: $h1_color;
+}
+
+

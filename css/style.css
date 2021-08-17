@@ -1,6 +1,22 @@
+@charset "UTF-8";
+/*css註解*/
 body {
   padding: 0px;
   margin: 0px;
-  background-color: #a5ff3f;
+  font-size: 17px;
+  color: #b4b4b4;
+  background-color: #feffb0;
+}
+
+.container {
+  width: 100%;
+}
+
+span {
+  color: #b4b4b4;
+}
+
+h1 {
+  color: #0b21eb;
 }
 /*# sourceMappingURL=style.css.map */
