@@ -1,6 +1,8 @@
-
+// 變數管理
 @import 'base/var';
 @import 'base/color';
+@import 'base/font';
+@import 'base/reset';
 
 // LINK scss
 // layout
@@ -8,16 +10,18 @@
 @import 'layout/footer';
 
 
-
-/*css註解*/
+// 網站基本配置
 body {
-  padding: 0px;
-  margin: 0px;
   font-size: $fontsize;
   color: $color;
+  font-family: $fontFamily;
+  font-weight: $fontWeight;
+  line-height: $lineHeight;
   background-color: $bgcolor;
 }
 
+
+/*css註解*/
 .container_full {
   width: $fullwidth;
 }
