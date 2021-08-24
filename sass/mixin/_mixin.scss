@@ -28,6 +28,15 @@
      font-size: $size;
      line-height: $lineHeight;
   }
+
+
+// boder radius
+@mixin border($line ,$bordercolor , $borderR:null){
+    border:$line solid $bordercolor;
+    border-radius:$borderR;
+}
+
+
 // 按鈕組件
   @mixin btn($w , $p , $bgc , $color , $border:null , $borderR:null) {
     width: $w;
