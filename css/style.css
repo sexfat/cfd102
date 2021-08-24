@@ -263,8 +263,9 @@ h2 {
 }
 
 .container {
-  width: 100%;
-  font-size: 14px;
+  width: 1366px;
+  margin: 0 auto;
+  font-size: 15px;
 }
 
 .wrapper {
