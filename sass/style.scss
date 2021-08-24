@@ -241,9 +241,13 @@ $a : 40;
 
 
 .box4 {
-  @include border_module(5px , top , right);
-  @include border_module(5px , bottom , left);
+  // @include border_module(30px , top , right);
+  // @include border_module(30px , bottom , left);
+  @include border_module(30px);
   background-color: rgb(255, 0, 0);
+  width:  300px;
+  height:  300px;
+  margin-top: 30px;
 }
 
 
