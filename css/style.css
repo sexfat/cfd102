@@ -402,4 +402,53 @@ h2 {
   position: relative;
   top: 10px;
 }
+
+.img_a1 {
+  background-image: url("images/a1.jpg");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.img_a2 {
+  background-image: url("images/a2.jpg");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.img_a3 {
+  background-image: url("images/a3.jpg");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.img_b1 {
+  background-image: url("images/b1.jpg");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.img_b2 {
+  background-image: url("images/b2.jpg");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.img_b3 {
+  background-image: url("images/b3.jpg");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.img_c1 {
+  background-image: url("images/c1.jpg");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 /*# sourceMappingURL=style.css.map */

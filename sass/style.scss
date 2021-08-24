@@ -245,8 +245,24 @@ $a : 40;
 //   }
 // }
 
- 
+@include position(m, 10, top);
+@include position(p, 10, top);
 
-@include position( m , 10, top);
-@include position( p , 10, top);
+$margin : 10px 10px 10px 10px; // list
 
+$map:("key1" : value,
+  "key2" : value); // map
+
+
+// @each
+
+$img : a1  a2  a3  b1 b2  b3 c1  ; // list 
+
+@each $a in $img {
+  .img_#{$a} {
+    background-image:url('images/#{$a}.jpg');
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
