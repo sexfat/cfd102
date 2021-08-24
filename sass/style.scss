@@ -200,50 +200,10 @@ $a : 40;
   }
 }
 
-@mixin theme($bg) {
-  .wrapper {
-    @if $bg==yellow {
-      background-color: rgb(255, 226, 4);
-      font-size: 16px;
-      color: #ff2713;
-      @content;
-    }
 
-    @else if $bg==blue {
-      background-color: rgb(30, 188, 255);
-      font-size: 14px;
-      color: #333;
-      @content;
-    }
-
-    @else if $bg==green {
-      background-color: rgb(48, 255, 148);
-      color: yellow;
-      font-size: 12px;
-      @content;
-    }
-  }
-}
 
 // border radius
 
-
-// $h top or bottom  $v left or right 
-@mixin border_module($num, $h:null, $v:null) {
-  @if $h==null and $v==null {
-    border-radius: $num;
-  }
-
-  @else {
-    border-#{$h}-#{$v}-radius: $num;
-  }
-}
-
-// width height
-@mixin rect($w, $h:$w) {
-  width: $w;
-  height: $h;
-}
 
 
 .box4 {
@@ -252,21 +212,6 @@ $a : 40;
   @include border_module(10px);
   background-color: rgb(255, 0, 0);
   @include rect(150px, 80px);
-}
-
-// layout mixin
-@mixin layout($w:full, $num: $w) {
-  @if $w==full {
-    width: 100%;
-    font-size: 14px;
-
-  }
-
-  @else if $w==$num {
-    width: $num + px;
-    margin: 0 auto;
-    font-size: 15px
-  }
 }
 
 
@@ -300,26 +245,8 @@ $a : 40;
 //   }
 // }
 
-
-// Style  if == p  用position  or if == m 用margin
-@mixin position($style , $num, $dir) {
-  @for $i from 1 through $num {
-  // position
-    @if $style == p {
-      .push-#{$dir}-#{$i} {
-        position: relative;
-        #{$dir}: $i * 1px;
-      }
-    }
-//  margin
-    @else if $style == m {
-      .margin-#{$dir}-#{$i} {
-        margin-#{$dir}: $i * 1px
-      }
-
-    }
-  }
-}
+ 
 
 @include position( m , 10, top);
 @include position( p , 10, top);
+
