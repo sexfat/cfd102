@@ -249,24 +249,23 @@ $a : 40;
 .box4 {
   // @include border_module(30px , top , right);
   // @include border_module(30px , bottom , left);
-  @include border_module(30px, top, right);
+  @include border_module(10px);
   background-color: rgb(255, 0, 0);
-  @include rect(400px, 300px);
-  margin-top: 30px;
+  @include rect(150px, 80px);
 }
 
 // layout mixin
-@mixin layout($w:full , $num: $w) {
-  @if $w == full {
+@mixin layout($w:full, $num: $w) {
+  @if $w==full {
     width: 100%;
     font-size: 14px;
 
   }
 
-  @else if $w == $num {
-     width: $num + px;
-     margin: 0 auto;
-     font-size: 15px
+  @else if $w==$num {
+    width: $num + px;
+    margin: 0 auto;
+    font-size: 15px
   }
 }
 
@@ -277,17 +276,49 @@ $a : 40;
 
 
 
+@include theme(green);
+
+// 迴圈
+
+@for $i from 1 through 10 {
+  .rect-#{$i} {
+    width: $i * 1px;
+  }
+}
 
 
+// @for $i from 1 through 200 {
+//   .push-top#{$i} {
+//     position: relative;
+//     top: $i * 1px
+//   }
+// }
+
+// @for $i from 1 through 200 {
+//   .margin-top#{$i} {
+//     margin-top: $i * 1px
+//   }
+// }
 
 
+// Style  if == p  用position  or if == m 用margin
+@mixin position($style , $num, $dir) {
+  @for $i from 1 through $num {
+    @if $style == p {
+      .push-#{$dir}-#{$i} {
+        position: relative;
+        #{$dir}: $i * 1px;
+      }
+    }
 
+    @else if $style == m {
+      .margin-#{$dir}-#{$i} {
+        margin-#{$dir}: $i * 1px
+      }
 
+    }
+  }
+}
 
-
-
-
-
-
-
-@include theme(green)
+@include position( m , 200, top);
+@include position( p , 200, top);
