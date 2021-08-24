@@ -404,42 +404,49 @@ h2 {
 }
 
 .img_a1 {
-  background-image: url("images/a1.jpg");
+  background-image: url("images/a1.png");
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .img_a2 {
-  background-image: url("images/a2.jpg");
+  background-image: url("images/a2.png");
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .img_a3 {
-  background-image: url("images/a3.jpg");
+  background-image: url("images/a3.png");
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .img_b1 {
-  background-image: url("images/b1.jpg");
+  background-image: url("images/b1.png");
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .img_b2 {
-  background-image: url("images/b2.jpg");
+  background-image: url("images/b2.png");
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .img_b3 {
-  background-image: url("images/b3.jpg");
+  background-image: url("images/b3.png");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.img_b4 {
+  background-image: url("images/b4.png");
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -450,5 +457,34 @@ h2 {
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: #fff;
+}
+
+.img_c1::after {
+  content: '';
+}
+
+.img_c2 {
+  background-image: url("images/c2.jpg");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #fff;
+}
+
+.img_c2::after {
+  content: '';
+}
+
+.img_c3 {
+  background-image: url("images/c3.jpg");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #fff;
+}
+
+.img_c3::after {
+  content: '';
 }
 /*# sourceMappingURL=style.css.map */

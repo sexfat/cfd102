@@ -256,13 +256,24 @@ $map:("key1" : value,
 
 // @each
 
-$img : a1  a2  a3  b1 b2  b3 c1  ; // list 
+$img : a1 a2 a3 b1 b2 b3 c1; // list 
 
-@each $a in $img {
-  .img_#{$a} {
-    background-image:url('images/#{$a}.jpg');
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
+@mixin img($img , $format:jpg) {
+  @each $a in $img {
+    .img_#{$a} {
+      background-image:url('images/#{$a}.#{$format}');
+      width: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      @content;
+    }
   }
 }
+
+@include img(a1 a2 a3 b1 b2 b3 b4 , png);
+@include img(c1 c2 c3){
+   background-color: #fff;
+   &::after {
+     content: '';
+   }
+};
