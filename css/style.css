@@ -254,6 +254,12 @@ h2 {
   width: 120px;
 }
 
+.box4 {
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: red;
+}
+
 .wrapper {
   background-color: #30ff94;
   color: yellow;

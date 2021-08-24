@@ -202,19 +202,21 @@ $a : 40;
 
 @mixin theme($bg) {
   .wrapper {
-    @if $bg == yellow {
+    @if $bg==yellow {
       background-color: rgb(255, 226, 4);
       font-size: 16px;
-      color:#ff2713;
+      color: #ff2713;
       @content;
     }
-    @else if $bg == blue {
+
+    @else if $bg==blue {
       background-color: rgb(30, 188, 255);
       font-size: 14px;
       color: #333;
       @content;
     }
-    @else if $bg == green {
+
+    @else if $bg==green {
       background-color: rgb(48, 255, 148);
       color: yellow;
       font-size: 12px;
@@ -222,6 +224,34 @@ $a : 40;
     }
   }
 }
+
+// border radius
+
+
+// $h top or bottom  $v left or right 
+@mixin border_module($num, $h:null, $v:null) {
+  @if $h== null and $v== null {
+    border-radius: $num;
+  }
+
+  @else {
+    border-#{$h}-#{$v}-radius: $num;
+  }
+}
+
+
+.box4 {
+  @include border_module(5px , top , right);
+  @include border_module(5px , bottom , left);
+  background-color: rgb(255, 0, 0);
+}
+
+
+
+
+
+
+
 
 
 @include theme(green)
