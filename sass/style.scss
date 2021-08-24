@@ -238,17 +238,27 @@ $a : 40;
     border-#{$h}-#{$v}-radius: $num;
   }
 }
+// width height
+@mixin rect($w , $h:$w){
+  width: $w;
+  height: $h;
+}
 
 
 .box4 {
   // @include border_module(30px , top , right);
   // @include border_module(30px , bottom , left);
-  @include border_module(30px);
+  @include border_module(30px , top , right);
   background-color: rgb(255, 0, 0);
-  width:  300px;
-  height:  300px;
+  @include rect(400px , 300px);
   margin-top: 30px;
 }
+
+
+
+
+
+
 
 
 

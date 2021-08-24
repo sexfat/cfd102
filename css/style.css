@@ -255,9 +255,9 @@ h2 {
 }
 
 .box4 {
-  border-radius: 30px;
+  border-top-right-radius: 30px;
   background-color: red;
-  width: 300px;
+  width: 400px;
   height: 300px;
   margin-top: 30px;
 }
