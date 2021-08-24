@@ -230,7 +230,7 @@ $a : 40;
 
 // $h top or bottom  $v left or right 
 @mixin border_module($num, $h:null, $v:null) {
-  @if $h== null and $v== null {
+  @if $h==null and $v==null {
     border-radius: $num;
   }
 
@@ -238,8 +238,9 @@ $a : 40;
     border-#{$h}-#{$v}-radius: $num;
   }
 }
+
 // width height
-@mixin rect($w , $h:$w){
+@mixin rect($w, $h:$w) {
   width: $w;
   height: $h;
 }
@@ -248,11 +249,32 @@ $a : 40;
 .box4 {
   // @include border_module(30px , top , right);
   // @include border_module(30px , bottom , left);
-  @include border_module(30px , top , right);
+  @include border_module(30px, top, right);
   background-color: rgb(255, 0, 0);
-  @include rect(400px , 300px);
+  @include rect(400px, 300px);
   margin-top: 30px;
 }
+
+// layout mixin
+@mixin layout($w:full , $num: $w) {
+  @if $w == full {
+    width: 100%;
+    font-size: 14px;
+
+  }
+
+  @else if $w == $num {
+     width: $num + px;
+     margin: 0 auto;
+     font-size: 15px
+  }
+}
+
+
+.container {
+  @include layout(full);
+}
+
 
 
 
