@@ -249,4 +249,14 @@ h2 {
   height: 33px;
   margin: 34px;
 }
+
+.box3 {
+  width: 120px;
+}
+
+.wrapper {
+  background-color: #30ff94;
+  color: yellow;
+  font-size: 12px;
+}
 /*# sourceMappingURL=style.css.map */
