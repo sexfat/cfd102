@@ -156,6 +156,28 @@ $null : null; // 數值型態 NULL
   }
 }
 
+ // 運算
+.box {
+  width:  10rem + 1rem;
+  height: 10 - 1 + rem;
+  margin:  10px * 10;
+  font :  (100px / 5) ;
+}
+
+
+
+
+.box1 {
+  width: round(100px / 7 ); //四捨五入
+  height: floor(100px / 3  ); //無條件捨去
+  margin: ceil(100px / 3  ); //無條件進位
+}
+
+
+
+
+
+
 
 
 

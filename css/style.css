@@ -236,4 +236,17 @@ h2 {
   background-color: #cc0000;
   color: black;
 }
+
+.box {
+  width: 11rem;
+  height: 9rem;
+  margin: 100px;
+  font: 20px;
+}
+
+.box1 {
+  width: 14px;
+  height: 33px;
+  margin: 34px;
+}
 /*# sourceMappingURL=style.css.map */
