@@ -54,7 +54,7 @@ function movefile(){
 }
 
 function movecss(){
-   return src(['css/style.css' , 'css/main.css']).pipe(dest('dist/css'))
+   return src(['css/*.css' , '!css/del.css']).pipe(dest('dist/css'))
 }
 
 
