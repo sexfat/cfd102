@@ -90,3 +90,25 @@ exports.js = jsmin;
 
 
 
+// ==== 6. css 壓縮
+
+const cleanCSS = require('gulp-clean-css');
+
+// function minicss(){
+//    return src('css/*.css')
+//    .pipe(cleanCSS({compatibility: 'ie10'}))
+//    .pipe(dest('dist/css'))
+// }
+
+// exports.cssmin = minicss; 
+
+exports.cssmin = () => src('css/*.css')
+  .pipe(cleanCSS({compatibility: 'ie10'}))
+  .pipe(rename({
+      extname: '.min.css'
+    }))
+  .pipe(dest('dist/css'))
+
+
+
+
