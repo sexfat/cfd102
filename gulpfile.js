@@ -38,27 +38,27 @@ function missionD(cb) {
 }
 
 // 順序
-exports.async = series(missionA , missionB);
+exports.async = series(missionA, missionB);
 
 //先執行A任務 在同時執行 B 與 C 任務 在執行D
-exports.mix = series(missionA ,  parallel(missionB , missionC) , missionD);
+exports.mix = series(missionA, parallel(missionB, missionC), missionD);
 
 // 同時
-exports.sync = parallel(missionA , missionB);
+exports.sync = parallel(missionA, missionB);
 
 
 
-function movefile(){
-// src 來源 -> dest 目的地
-  return src('index.html').pipe(dest('dist'));
+function movefile() {
+    // src 來源 -> dest 目的地
+    return src('index.html').pipe(dest('dist'));
 }
 
-function movecss(){
-   return src(['css/*.css' , '!css/del.css']).pipe(dest('dist/css'))
+function movecss() {
+    return src(['css/*.css', '!css/del.css']).pipe(dest('dist/css'))
 }
 
 
-exports.move = parallel(movefile , movecss);
+exports.move = parallel(movefile, movecss);
 
 
 // 壓縮 js
@@ -67,18 +67,18 @@ const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
 
 
-function jsmin(){
-  return src('js/*.js')
-  .pipe(uglify())
-  .pipe(rename({
-      extname: '.min.js'
-    })).pipe(dest('dist/js'));
+function jsmin() {
+    return src('js/*.js')
+        .pipe(uglify())
+        .pipe(rename({
+            extname: '.min.js'
+        })).pipe(dest('dist/js'));
 }
 
 
-function cssrename(){
-  return src('css/*.css').pipe(rename({
-      extname: '.min.css'
+function cssrename() {
+    return src('css/*.css').pipe(rename({
+        extname: '.min.css'
     })).pipe(dest('dist/css'))
 }
 
@@ -103,11 +103,29 @@ const cleanCSS = require('gulp-clean-css');
 // exports.cssmin = minicss; 
 
 exports.cssmin = () => src('css/*.css')
-  .pipe(cleanCSS({compatibility: 'ie10'}))
-  .pipe(rename({
-      extname: '.min.css'
+    .pipe(cleanCSS({ compatibility: 'ie10' }))
+    .pipe(rename({
+        extname: '.min.css'
     }))
-  .pipe(dest('dist/css'))
+    .pipe(dest('dist/css'))
+
+
+// 合併程式碼
+const concat = require('gulp-concat');
+
+function allcss() {
+    return src('css/*.css')
+        .pipe(cleanCSS({ compatibility: 'ie10' }))
+        .pipe(concat('all.css'))
+        .pipe(rename({
+            extname: '.min.css'
+        }))
+        .pipe(dest('dist/css/'))
+}
+
+
+exports.cssconcat = allcss;
+
 
 
 
