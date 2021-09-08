@@ -129,6 +129,7 @@ exports.cssconcat = allcss;
 
 // sass 
 const sass = require('gulp-sass')(require('sass'));
+const sourcemaps = require('gulp-sourcemaps');
 
 // exports.stylesass = () => src('./sass/*.scss')
 //         .pipe(sass.sync().on('error', sass.logError))
@@ -137,9 +138,12 @@ const sass = require('gulp-sass')(require('sass'));
 
 function styles(){
      return src('./sass/*.scss')
-
-        .pipe(sass.sync({outputStyle: 'compressed'}).on('error', sass.logError))
-         //.pipe(cleanCSS({ compatibility: 'ie10' }))
+         // sourcemaps 初始化
+        .pipe(sourcemaps.init())
+         //{outputStyle: 'compressed'} 壓縮用
+        .pipe(sass.sync().on('error', sass.logError))
+         //.pipe(cleanCSS({ compatibility: 'ie10' })) 另一個壓縮css用的套件
+        .pipe(sourcemaps.write())
         .pipe(dest('./dist/css'));
 }
 

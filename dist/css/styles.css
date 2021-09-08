@@ -1,1 +1,16 @@
-header{background-color:#ffaa18;height:200px}body{font-size:20px}body h1{font-size:120px}body .logo{width:800px}
+header {
+  background-color: #ffaa18;
+  height: 200px;
+  width: 100vw;
+}
+
+body {
+  font-size: 20px;
+}
+body h1 {
+  font-size: 120px;
+}
+body .logo {
+  width: 800px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxheW91dC9faGVhZGVyLnNjc3MiLCJzdHlsZXMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNDO0VBQ0E7RUFDQTs7O0FDQUQ7RUFDRzs7QUFDQTtFQUNHOztBQUVIO0VBQ0ciLCJmaWxlIjoic3R5bGVzLmNzcyIsInNvdXJjZXNDb250ZW50IjpbImhlYWRlciB7XG4gYmFja2dyb3VuZC1jb2xvcjogI2ZmYWExODtcbiBoZWlnaHQ6IDIwMHB4O1xuIHdpZHRoOiAxMDB2dztcbn0iLCJAaW1wb3J0ICdsYXlvdXQvaGVhZGVyJztcblxuXG5ib2R5IHtcbiAgIGZvbnQtc2l6ZTogMjBweDtcbiAgIGgxIHtcbiAgICAgIGZvbnQtc2l6ZTogMTIwcHg7XG4gICB9XG4gICAubG9nbyB7XG4gICAgICB3aWR0aDogODAwcHg7XG4gICB9XG59Il19 */
