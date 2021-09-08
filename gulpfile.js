@@ -45,3 +45,17 @@ exports.mix = series(missionA ,  parallel(missionB , missionC) , missionD);
 
 // 同時
 exports.sync = parallel(missionA , missionB);
+
+
+
+function movefile(){
+// src 來源 -> dest 目的地
+  return src('index.html').pipe(dest('dist'));
+}
+
+function movecss(){
+   return src(['css/style.css' , 'css/main.css']).pipe(dest('dist/css'))
+}
+
+
+exports.move = parallel(movefile , movecss)
