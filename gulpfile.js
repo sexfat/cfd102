@@ -50,11 +50,11 @@ exports.sync = parallel(missionA, missionB);
 
 function movefile() {
     // src 來源 -> dest 目的地
-    return src('index.html').pipe(dest('dist'));
+    return src('dev/index.html').pipe(dest('dist'));
 }
 
 function movecss() {
-    return src(['css/*.css', '!css/del.css']).pipe(dest('dist/css'))
+    return src(['dev/css/*.css', '!dev/css/del.css']).pipe(dest('dist/css'))
 }
 
 
@@ -68,7 +68,7 @@ const rename = require('gulp-rename');
 
 
 function jsmin() {
-    return src('js/*.js')
+    return src('dev/js/*.js')
         .pipe(uglify())
         .pipe(rename({
             extname: '.min.js'
@@ -77,7 +77,7 @@ function jsmin() {
 
 
 function cssrename() {
-    return src('css/*.css').pipe(rename({
+    return src('dev/css/*.css').pipe(rename({
         extname: '.min.css'
     })).pipe(dest('dist/css'))
 }
@@ -102,7 +102,7 @@ const cleanCSS = require('gulp-clean-css');
 
 // exports.cssmin = minicss; 
 
-exports.cssmin = () => src('css/*.css')
+exports.cssmin = () => src('dev/css/*.css')
     .pipe(cleanCSS({ compatibility: 'ie10' }))
     .pipe(rename({
         extname: '.min.css'
@@ -114,7 +114,7 @@ exports.cssmin = () => src('css/*.css')
 const concat = require('gulp-concat');
 
 function allcss() {
-    return src('css/*.css')
+    return src('dev/css/*.css')
         .pipe(cleanCSS({ compatibility: 'ie10' }))
         .pipe(concat('all.css'))
         .pipe(rename({
@@ -137,7 +137,7 @@ const sourcemaps = require('gulp-sourcemaps');
 //         .pipe(dest('./dist/css'));
 
 function styles(){
-     return src('./sass/*.scss')
+     return src('dev/sass/*.scss')
          // sourcemaps 初始化
         .pipe(sourcemaps.init())
          //{outputStyle: 'compressed'} 壓縮用
@@ -156,7 +156,7 @@ function styles(){
 const fileinclude = require('gulp-file-include');
 
 function includeHTML() {
-    return src('*.html')
+    return src('dev/*.html')
         .pipe(fileinclude({
             prefix: '@@',
             basepath: '@file'
@@ -166,9 +166,9 @@ function includeHTML() {
 
 
 function watchtask(){
-  watch(['./sass/*.scss' , './sass/**/*.scss'] , styles);
-  watch('./js/*.js' , jsmin);
-  watch(['*.html' , '**/*.html'] , includeHTML)
+  watch(['./dev/sass/*.scss' , './dev/sass/**/*.scss'] , styles);
+  watch('./dev/js/*.js' , jsmin);
+  watch(['dev/*.html' , 'dev/**/*.html'] , includeHTML)
 }
 
 exports.watchs = watchtask
