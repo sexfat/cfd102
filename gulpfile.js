@@ -64,11 +64,27 @@ exports.move = parallel(movefile , movecss);
 // 壓縮 js
 
 const uglify = require('gulp-uglify');
+const rename = require('gulp-rename');
 
 
 function jsmin(){
-  return src('js/*.js').pipe(uglify()).pipe(dest('dist/js'));
+  return src('js/*.js')
+  .pipe(uglify())
+  .pipe(rename({
+      extname: '.min.js'
+    })).pipe(dest('dist/js'));
 }
+
+
+function cssrename(){
+  return src('css/*.css').pipe(rename({
+      extname: '.min.css'
+    })).pipe(dest('dist/css'))
+}
+
+
+exports.cssr = cssrename;
+
 
 exports.js = jsmin;
 
