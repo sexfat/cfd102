@@ -1,0 +1,1 @@
+let score=100,ok=60<=score?"及格":"不及格";console.log(ok);

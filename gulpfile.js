@@ -58,4 +58,19 @@ function movecss(){
 }
 
 
-exports.move = parallel(movefile , movecss)
+exports.move = parallel(movefile , movecss);
+
+
+// 壓縮 js
+
+const uglify = require('gulp-uglify');
+
+
+function jsmin(){
+  return src('js/*.js').pipe(uglify()).pipe(dest('dist/js'));
+}
+
+exports.js = jsmin;
+
+
+

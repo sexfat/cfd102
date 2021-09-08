@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/sexfat/cfd102#readme",
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "gulp": "^4.0.2",
+    "gulp-uglify": "^3.0.2"
   }
 }
