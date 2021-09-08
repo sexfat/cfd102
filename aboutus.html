@@ -4,26 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="./dist/css/styles.css">
- <title>首頁</title>
+    @@include('layout/meta.html', {
+      "title" : "關於我們"
+    })
    
     
 </head>
 <body>
-    <header>headertempale
-  <div class="logo">logofont</div>
-</header>
+    @@include('layout/header.html', {
+       "var" : "headertempale",
+       "logo" : "logofont"
+    })
     <div class="wrapper">
-     首頁 
+     關於我們
     </div>
-    <footer>
-<ul>
-    <li>nav</li>
-    <li>nav</li>
-    <li>nav</li>
-    <li>nav</li>
-</ul>
-
-</footer>
+    @@include('layout/footer.html')
 </body>
 </html>
