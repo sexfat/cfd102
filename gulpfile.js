@@ -195,6 +195,17 @@ function browser(done) {
 
 exports.default = browser;
 
+const autoprefixer = require('gulp-autoprefixer');
+
+
+exports.prefixer = () => (
+     src('./dev/css/del.css')
+        .pipe(autoprefixer({
+            cascade: false
+        }))
+        .pipe(dest('./output/css/prefixer/'))
+);
+
 
 
 
