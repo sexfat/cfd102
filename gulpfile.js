@@ -144,7 +144,8 @@ function styles(){
 
 
 function watchtask(){
-  watch('./sass/*.scss' , styles)
+  watch(['./sass/*.scss' , './sass/**/*.scss'] , styles);
+  watch('./js/*.js' , jsmin);
 }
 
 exports.watchsass = watchtask
