@@ -148,19 +148,14 @@ function styles(){
 }
 
 
-function watchtask(){
-  watch(['./sass/*.scss' , './sass/**/*.scss'] , styles);
-  watch('./js/*.js' , jsmin);
-}
 
-exports.watchsass = watchtask
 
 
 // html template
 
 const fileinclude = require('gulp-file-include');
 
-exports.html =  function includeHTML() {
+function includeHTML() {
     return src('*.html')
         .pipe(fileinclude({
             prefix: '@@',
@@ -168,6 +163,15 @@ exports.html =  function includeHTML() {
         }))
         .pipe(dest('./dist'));
 }
+
+
+function watchtask(){
+  watch(['./sass/*.scss' , './sass/**/*.scss'] , styles);
+  watch('./js/*.js' , jsmin);
+  watch(['*.html' , '**/*.html'] , includeHTML)
+}
+
+exports.watchs = watchtask
 
 
 
