@@ -127,13 +127,27 @@ function allcss() {
 exports.cssconcat = allcss;
 
 
-
+// sass 
 const sass = require('gulp-sass')(require('sass'));
 
-exports.stylesass = () => src('./sass/*.scss')
-        .pipe(sass.sync().on('error', sass.logError))
-        .pipe(dest('./dist/css'));
+// exports.stylesass = () => src('./sass/*.scss')
+//         .pipe(sass.sync().on('error', sass.logError))
+//          .pipe(cleanCSS({ compatibility: 'ie10' }))
+//         .pipe(dest('./dist/css'));
 
+function styles(){
+     return src('./sass/*.scss')
+        .pipe(sass.sync().on('error', sass.logError))
+         .pipe(cleanCSS({ compatibility: 'ie10' }))
+        .pipe(dest('./dist/css'));
+}
+
+
+function watchtask(){
+  watch('./sass/*.scss' , styles)
+}
+
+exports.watchsass = watchtask
 
 
 
