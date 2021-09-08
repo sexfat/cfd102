@@ -156,6 +156,21 @@ function watchtask(){
 exports.watchsass = watchtask
 
 
+// html template
+
+const fileinclude = require('gulp-file-include');
+
+exports.html =  function includeHTML() {
+    return src('*.html')
+        .pipe(fileinclude({
+            prefix: '@@',
+            basepath: '@file'
+        }))
+        .pipe(dest('./dist'));
+}
+
+
+
 
 
 
