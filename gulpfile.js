@@ -128,5 +128,19 @@ exports.cssconcat = allcss;
 
 
 
+const sass = require('gulp-sass')(require('sass'));
+
+exports.stylesass = () => src('./sass/*.scss')
+        .pipe(sass.sync().on('error', sass.logError))
+        .pipe(dest('./dist/css'));
+
+
+
+
+
+
+
+
+
 
 
