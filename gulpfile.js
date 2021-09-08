@@ -137,8 +137,9 @@ const sass = require('gulp-sass')(require('sass'));
 
 function styles(){
      return src('./sass/*.scss')
-        .pipe(sass.sync().on('error', sass.logError))
-         .pipe(cleanCSS({ compatibility: 'ie10' }))
+
+        .pipe(sass.sync({outputStyle: 'compressed'}).on('error', sass.logError))
+         //.pipe(cleanCSS({ compatibility: 'ie10' }))
         .pipe(dest('./dist/css'));
 }
 
