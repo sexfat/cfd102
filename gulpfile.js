@@ -136,13 +136,13 @@ const sourcemaps = require('gulp-sourcemaps');
 //          .pipe(cleanCSS({ compatibility: 'ie10' }))
 //         .pipe(dest('./dist/css'));
 
-function styles(){
-     return src('dev/sass/*.scss')
-         // sourcemaps 初始化
+function styles() {
+    return src('dev/sass/*.scss')
+        // sourcemaps 初始化
         .pipe(sourcemaps.init())
-         //{outputStyle: 'compressed'} 壓縮用
+        //{outputStyle: 'compressed'} 壓縮用
         .pipe(sass.sync().on('error', sass.logError))
-         //.pipe(cleanCSS({ compatibility: 'ie10' })) 另一個壓縮css用的套件
+        //.pipe(cleanCSS({ compatibility: 'ie10' })) 另一個壓縮css用的套件
         .pipe(sourcemaps.write())
         .pipe(dest('./dist/css'));
 }
@@ -165,14 +165,35 @@ function includeHTML() {
 }
 
 
-function watchtask(){
-  watch(['./dev/sass/*.scss' , './dev/sass/**/*.scss'] , styles);
-  watch('./dev/js/*.js' , jsmin);
-  watch(['dev/*.html' , 'dev/**/*.html'] , includeHTML)
+function watchtask() {
+    watch(['./dev/sass/*.scss', './dev/sass/**/*.scss'], styles);
+    watch('./dev/js/*.js', jsmin);
+    watch(['dev/*.html', 'dev/**/*.html'], includeHTML)
 }
 
 exports.watchs = watchtask
 
+
+// 瀏覽器同步
+
+const browserSync = require('browser-sync');
+const reload = browserSync.reload;
+
+function browser(done) {
+    browserSync.init({
+        server: {
+            baseDir: "./dist",
+            index: "index.html"
+        },
+        port: 3000
+    });
+     watch(['./dev/sass/*.scss', './dev/sass/**/*.scss'], styles).on('change' , reload);
+     watch('./dev/js/*.js', jsmin).on('change' , reload);
+     watch(['dev/*.html', 'dev/**/*.html'], includeHTML).on('change' , reload);
+     done();
+}
+
+exports.default = browser;
 
 
 
