@@ -7,14 +7,37 @@
 }
 
 @mixin t() {
-    @media all and (min-width:$t_minWidth ) and (max-width:$t_maxWidth) {
+    @media all and (min-width:$t_minWidth) and (max-width:$t_maxWidth) {
         @content;
     }
 }
 
-
 // 圓角設定
-@mixin borderR($val){
-  border-radius:$val ;
+@mixin borderR($val) {
+    border-radius: $val;
 }
 
+
+@mixin rect($w , $h:$w){
+   width: $w;
+   height: $h; 
+   @include borderR(10px)
+} 
+
+
+@mixin flexcenter() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin margincenter($var:0) {
+    margin: $var auto;
+}
+
+@mixin positioncenter() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
