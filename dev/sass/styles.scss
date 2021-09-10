@@ -1,13 +1,22 @@
-@import 'layout/header';
+// base 
+@import 'base/var';
+@import 'base/color';
+@import 'base/font';
+@import 'base/reset';
+
+// mixin
+
+@import 'mixin/mixin';
+
+// layout 
+
+@import './layout/header';
+@import './layout/foooter';
+@import './layout/sidebar';
+@import './layout/login';
 
 
-body {
-   font-size: 18px;
-   color: rgb(115, 115, 115);
-   h1 {
-      font-size: 120px;
-   }
-   .logo {
-      width: 800px;
-   }
-}
+
+
+
+

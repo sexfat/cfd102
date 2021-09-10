@@ -1,8 +1,30 @@
 header {
- background-color: #fecb00;
- height: 200px;
- width: 100vw;
- .active {
-   color: rgb(183, 0, 249) 
- }
+  background-color: #fecb00;
+  height: 200px;
+  width: 100vw;
+  @include m(){
+    background-color: #ff5900;
+  }
+  @include t(){
+    background-color: #0086fb;
+  }
+
+  .active {
+    color: rgb(183, 0, 249)
+  }
 }
+// // 手機版
+// @include m() {
+//   header {
+//     background-color: #ff5900;
+//     height: 80px;
+//   }
+// }
+
+// //  平版
+// @include t() {
+//   header {
+//     background-color: #59ff00;
+//     height: 120px;
+//   }
+// }

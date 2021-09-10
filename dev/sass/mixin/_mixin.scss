@@ -1,0 +1,20 @@
+// rwd  m:手機  t:平板  d:桌機
+
+@mixin m() {
+    @media all and (max-width:$maxWidth) {
+        @content;
+    }
+}
+
+@mixin t() {
+    @media all and (min-width:$t_minWidth ) and (max-width:$t_maxWidth) {
+        @content;
+    }
+}
+
+
+// 圓角設定
+@mixin borderR($val){
+  border-radius:$val ;
+}
+
