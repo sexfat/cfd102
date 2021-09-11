@@ -187,10 +187,10 @@ function browser(done) {
         },
         port: 3000
     });
-     watch(['./dev/sass/*.scss', './dev/sass/**/*.scss'], styles).on('change' , reload);
-     watch('./dev/js/*.js', jsmin).on('change' , reload);
-     watch(['dev/*.html', 'dev/**/*.html'], includeHTML).on('change' , reload);
-     done();
+    watch(['./dev/sass/*.scss', './dev/sass/**/*.scss'], styles).on('change', reload);
+    watch('./dev/js/*.js', jsmin).on('change', reload);
+    watch(['dev/*.html', 'dev/**/*.html'], includeHTML).on('change', reload);
+    done();
 }
 
 exports.default = browser;
@@ -198,7 +198,7 @@ exports.default = browser;
 const autoprefixer = require('gulp-autoprefixer');
 
 exports.prefixer = () => (
-     src('./dev/css/del.css')
+    src('./dev/css/del.css')
         .pipe(autoprefixer({
             cascade: false
         }))
@@ -209,16 +209,16 @@ exports.prefixer = () => (
 
 const imagemin = require('gulp-imagemin');
 
-function min_images(){
+function min_images() {
     return src('dev/images/*.*')
-    .pipe(imagemin([
-    imagemin.mozjpeg({quality: 75, progressive: true}),
-	imagemin.optipng({optimizationLevel: 5})
-    ]))
-    .pipe(dest('dist/images'))
+        .pipe(imagemin([
+            imagemin.mozjpeg({ quality: 75, progressive: true }), // jpg  壓縮
+            imagemin.optipng({ optimizationLevel: 5 })// 數字越高 壓縮越大
+        ]))
+        .pipe(dest('dist/images'))
 }
 
-exports.img= min_images;
+exports.img = min_images;
 
 
 
