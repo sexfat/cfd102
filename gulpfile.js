@@ -180,6 +180,19 @@ function watchtask() {
 exports.watchs = watchtask
 
 
+// 清除舊檔案
+
+const clean = require('gulp-clean');
+
+function clear() {
+  return src('dist' ,{ read: false ,allowEmpty: true })//不去讀檔案結構，增加刪除效率  / allowEmpty : 允許刪除空的檔案
+  .pipe(clean({force: true})); //強制刪除檔案 
+}
+
+// exports.del = clear;
+
+
+
 // 瀏覽器同步
 
 const browserSync = require('browser-sync');
@@ -199,7 +212,11 @@ function browser(done) {
     done();
 }
 
-exports.default = browser;
+exports.default = browser; // dev
+exports.packageall = series(clear, parallel (styles ,jsmin ,includeHTML));  // 打包上線
+
+
+
 
 const autoprefixer = require('gulp-autoprefixer');
 
@@ -225,6 +242,9 @@ function min_images() {
 }
 
 exports.img = min_images;
+
+
+
 
 
 

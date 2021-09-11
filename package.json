@@ -6,7 +6,10 @@
   "scripts": {
     "安裝套件": "npm i",
     "開發": "gulp",
-    "壓圖": "gulp img"
+    "壓圖": "gulp img",
+    "刪除舊檔案": "gulp del",
+    "打包上線": "gulp packageall"
+
   },
   "repository": {
     "type": "git",
@@ -26,6 +29,7 @@
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-babel": "^8.0.0",
+    "gulp-clean": "^0.4.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-file-include": "^2.3.0",
