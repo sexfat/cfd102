@@ -205,6 +205,20 @@ exports.prefixer = () => (
         .pipe(dest('./output/css/prefixer/'))
 );
 
+// 壓縮圖片
+
+const imagemin = require('gulp-imagemin');
+
+function min_images(){
+    return src('dev/images/*.*')
+    .pipe(imagemin([
+    imagemin.mozjpeg({quality: 75, progressive: true}),
+	imagemin.optipng({optimizationLevel: 5})
+    ]))
+    .pipe(dest('dist/images'))
+}
+
+exports.img= min_images;
 
 
 
