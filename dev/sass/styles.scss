@@ -34,3 +34,131 @@
 
 
 
+// grid
+@mixin grid($r , $num:12) {
+    @for $i from 1 through $num {
+        .col-#{$r}-#{$i} {
+            flex: 0 0 auto;
+            width: ($i / $num) * 100%;
+            @content;
+        }
+
+    }
+}
+
+
+@include m() {
+ @include grid(md);
+}
+
+@include t() {
+ @include grid(lg);
+}
+
+
+// extend
+
+
+.green {
+
+  background-color: #94f40d;
+
+}
+
+.red {
+  background-color: #ef0e0e;
+
+}
+
+.fontblack {
+ color: #333;
+}
+
+%margintop10 {
+ margin: 10px auto 0;
+
+}
+
+.border_r_5 {
+  border-radius: 5px;
+}
+
+
+
+
+.box {
+  @include rect(200px , 100px);
+  @extend .red;
+  @extend .fontblack;
+  @extend %margintop10;
+  @extend .border_r_5;
+}
+
+
+$title :(
+//  'key' : 'value', 
+'h1' : 40px, 
+'h2' : 30px, 
+'h3' : 20px, 
+'h4' : 18px, 
+); // map
+
+
+@each $t , $v in $title {
+   #{$t} {
+     font-size: $v;
+   }
+}
+
+
+
+$colors: (
+  "blue":       $blue,
+  "indigo":     $indigo,
+  "purple":     $purple,
+  "pink":       $pink,
+  "red":        $red,
+  "orange":     $orange,
+  "yellow":     $yellow,
+  "green":      $green,
+  "gray":       rgb(166, 166, 166),
+) !default;
+
+
+.btn {
+  text-align: center;
+  padding: 10px 20px;
+  color:#333;
+  cursor: pointer;
+   @extend .border_r_5;
+}
+
+.btn-xl {
+  text-align: center;
+  padding: 12px 40px;
+  color:#333;
+  cursor: pointer;
+   @extend .border_r_5;
+}
+
+
+
+@each $c , $val in $colors {
+    .btn-#{$c}{
+      background-color: $val; 
+    } 
+}
+
+
+@each $c , $val in $colors {
+    .btn-otuline-#{$c}{
+     border: 1px solid $val; 
+    } 
+}
+
+
+
+
+
+
+
