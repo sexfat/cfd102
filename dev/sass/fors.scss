@@ -10,9 +10,9 @@
 
 
 // grid
-@mixin gridmd($num) {
+@mixin grid($r , $num:12) {
     @for $i from 1 through $num {
-        .col-md-#{$i} {
+        .col-#{$r}-#{$i} {
             flex: 0 0 auto;
             width: ($i / $num) * 100%;
             @content;
@@ -20,26 +20,12 @@
 
     }
 }
-
-
-@mixin gridlg($num) {
-    @for $i from 1 through $num {
-        .col-lg-#{$i} {
-            flex: 0 0 auto;
-            width: ($i / $num) * 100%;
-            @content;
-        }
-
-    }
-}
-
 
 
 @include m() {
-    @include gridmd(12);
+ @include grid(md);
 }
 
-
 @include t() {
-    @include gridlg(12);
+ @include grid(lg);
 }
