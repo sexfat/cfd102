@@ -17,7 +17,7 @@ function styles() {
         // sourcemaps 初始化
         .pipe(sourcemaps.init())
         //{outputStyle: 'compressed'} 壓縮用
-        .pipe(sass.sync({outputStyle: 'compressed'}).on('error', sass.logError))
+        .pipe(sass.sync().on('error', sass.logError))
         .pipe(sourcemaps.write())
         .pipe(dest('./dist/css'));
 }
