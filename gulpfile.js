@@ -65,15 +65,21 @@ exports.move = parallel(movefile, movecss);
 
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
+const babel = require('gulp-babel');
 
 
 function jsmin() {
     return src('dev/js/*.js')
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
         .pipe(uglify())
         .pipe(rename({
             extname: '.min.js'
         })).pipe(dest('dist/js'));
 }
+
+exports.js = jsmin;
 
 
 function cssrename() {
