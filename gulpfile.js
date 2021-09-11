@@ -213,7 +213,7 @@ function browser(done) {
 }
 
 exports.default = browser; // dev
-exports.packageall = series(clear, parallel (styles ,jsmin ,includeHTML));  // 打包上線
+exports.packageall = series(clear, parallel(styles ,jsmin ,includeHTML));  // 打包上線
 
 
 
