@@ -1,0 +1,45 @@
+// base 
+@import 'base/var';
+@import 'base/color';
+@import 'base/font';
+@import 'base/reset';
+
+// mixin
+
+@import 'mixin/mixin';
+
+
+// grid
+@mixin gridmd($num) {
+    @for $i from 1 through $num {
+        .col-md-#{$i} {
+            flex: 0 0 auto;
+            width: ($i / $num) * 100%;
+            @content;
+        }
+
+    }
+}
+
+
+@mixin gridlg($num) {
+    @for $i from 1 through $num {
+        .col-lg-#{$i} {
+            flex: 0 0 auto;
+            width: ($i / $num) * 100%;
+            @content;
+        }
+
+    }
+}
+
+
+
+@include m() {
+    @include gridmd(12);
+}
+
+
+@include t() {
+    @include gridlg(12);
+}
