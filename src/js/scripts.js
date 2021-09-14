@@ -1,8 +1,8 @@
-import $ from 'jquery';
+// import $ from 'jquery';
 import '../sass/style.scss';
 import '../sass/header.scss';
 
-$('body').css('background-color' , '#e2e2e2');
+$('body').css('background-color' , '#999');
 
 
 let arr = [1 ,2 ,3];

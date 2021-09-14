@@ -21,7 +21,10 @@
   },
   "homepage": "https://github.com/sexfat/cfd102#readme",
   "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
     "@webpack-cli/serve": "^1.5.2",
+    "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^5.2.4",
     "html-webpack-plugin": "^4.5.0",

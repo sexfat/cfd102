@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {
     CleanWebpackPlugin
 } = require('clean-webpack-plugin');
+const webpack  = require('webpack');
 
 
 
@@ -16,23 +17,40 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'js/[name].js'
     },// 出口文件
-   module: {
+ module: {
         rules: [{
             // 格式
             test: /\.(sass|scss|css)$/,
-            //順序是由下到上 sass > css > style
+            //順序是由下到上 css > style
             use: [{
-                loader: MiniCssExtractPlugin.loader,
-                options: {
-                  publicPath: './dist/'
-                }
-              },
+                    loader: MiniCssExtractPlugin.loader,
+                    options: {
+                      publicPath: './dist'
+                    }
+                  },
+                // 'style-loader',//跟MiniCssExtractPlugin 會衝突所以要關掉
                 'css-loader',
                 'sass-loader'
             ],
-        }]
+        },
+        //babel loader
+        {
+            test: /\.(js)$/,
+            exclude: /(node_modules)/,
 
-    },            // 處裡對應模組
+            use: [{
+                loader: 'babel-loader',
+                options: {
+                    presets: ['@babel/preset-env']
+                }
+            }],
+            include: path.resolve(__dirname, 'src'),//來源
+        },
+
+      ]
+
+    },
+           // 處裡對應模組
     plugins: [
         //清理舊的檔案
         new CleanWebpackPlugin(),
@@ -59,7 +77,11 @@ module.exports = {
             //來源
             filename : 'about.html'
             // 目的地
-        })
+        }),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
+          })
     ],            // 對應的插件
     resolve: {
         alias: {
