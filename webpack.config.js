@@ -2,12 +2,15 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-    entry: './scripts.js',               // 入口文件
+    entry: {
+      index :'./scripts.js',
+      about :'./about.js' 
+    },               // 入口文件
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: '[name].js'
     },// 出口文件
-   module: {
+    module: {
         rules: [{
             // 格式
             test: /\.css$/,
@@ -15,18 +18,18 @@ module.exports = {
             use: [{
                 loader: MiniCssExtractPlugin.loader,
                 options: {
-                  publicPath: './dist'
+                    publicPath: './dist'
                 }
-              },
+            },
                 //'style-loader', 會跟原本的衝突 
                 'css-loader'
             ],
         }]
 
     },              // 處裡對應模組
-   plugins: [
+    plugins: [
         new MiniCssExtractPlugin({
-            filename: "./main.css" // 打包出來的檔案
+            filename: "./[name].css" // 打包出來的檔案
         })
     ],            // 對應的插件
     //devServer: {},           // 服務器配置
