@@ -4,7 +4,7 @@ import '../sass/style.scss';
 import Vue from 'vue';
 
 
-var a =  new Vue({
+new Vue({
       el:'#app',
       data: {
         message : 'about vue'
@@ -12,6 +12,7 @@ var a =  new Vue({
 })
 
 
+$('body').css('background-color' , 'red');
 
 TweenMax.to('.b1' , 1, {
     x: 1200,

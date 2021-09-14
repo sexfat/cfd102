@@ -4,30 +4,31 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {
     CleanWebpackPlugin
 } = require('clean-webpack-plugin');
-const webpack  = require('webpack');
+const webpack = require('webpack');
+const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 
 
 
 module.exports = {
     entry: {
-      index :'./src/js/scripts.js',
-      about :'./src/js/about.js' 
+        index: './src/js/scripts.js',
+        about: './src/js/about.js'
     },               // 入口文件
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'js/[name].js'
     },// 出口文件
- module: {
+    module: {
         rules: [{
             // 格式
             test: /\.(sass|scss|css)$/,
             //順序是由下到上 css > style
             use: [{
-                    loader: MiniCssExtractPlugin.loader,
-                    options: {
-                      publicPath: './dist'
-                    }
-                  },
+                loader: MiniCssExtractPlugin.loader,
+                options: {
+                    publicPath: './dist'
+                }
+            },
                 // 'style-loader',//跟MiniCssExtractPlugin 會衝突所以要關掉
                 'css-loader',
                 'sass-loader'
@@ -47,10 +48,10 @@ module.exports = {
             include: path.resolve(__dirname, 'src'),//來源
         },
 
-      ]
+        ]
 
     },
-           // 處裡對應模組
+    // 處裡對應模組
     plugins: [
         //清理舊的檔案
         new CleanWebpackPlugin(),
@@ -58,37 +59,43 @@ module.exports = {
             filename: "./css/[name].css" // 打包出來的檔案
         }),
         new HtmlWebpackPlugin({
-            chunks : ['index'],  //選擇注入資源 chunk
-            inject  : 'body', //預設<body> js </body>  head or body
-            minify : false, // 壓縮html option
-            meta:{
-               viewport : 'width=device-width, initial-scale=1.0' 
+            chunks: ['index'],  //選擇注入資源 chunk
+            inject: 'body', //預設<body> js </body>  head or body
+            minify: false, // 壓縮html option
+            meta: {
+                viewport: 'width=device-width, initial-scale=1.0'
             },
-            favicon : './src/img/favicon.ico',
-            template : './src/index.html',
+            favicon: './src/img/favicon.ico',
+            template: './src/index.html',
             //來源
-            filename : 'index.html'
+            filename: 'index.html'
             // 目的地
         }),
         new HtmlWebpackPlugin({
-            chunks : ['about'],  //選擇注入資源 chunk
-            inject  : 'body', //預設<body> js </body>  head or body
-            template : './src/about.html',
+            chunks: ['about'],  //選擇注入資源 chunk
+            inject: 'body', //預設<body> js </body>  head or body
+            template: './src/about.html',
             //來源
-            filename : 'about.html'
+            filename: 'about.html'
             // 目的地
         }),
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery'
-          })
+        }),
+        // html template
+        new HtmlWebpackPartialsPlugin({
+            path: path.join(__dirname, './src/layout/nav.html'), // 模板
+            location: 'header',//   嵌入標籤位置
+            template_filename: ['index.html' , 'about.html']
+        })
     ],            // 對應的插件
     resolve: {
         alias: {
-           vue: 'vue/dist/vue.js'
+            vue: 'vue/dist/vue.js'
         }
-      },
-   devServer: {
+    },
+    devServer: {
         contentBase: './dist',
         host: 'localhost',
         port: 3000,
