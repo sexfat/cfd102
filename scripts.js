@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-$('body').css('background-color' , 'green');
+$('body').css('background-color' , '#e2e2e2');
 
 
 let arr = [1 ,2 ,3];
