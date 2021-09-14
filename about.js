@@ -1,5 +1,6 @@
 console.log('about ok');
 import TweenMax from 'gsap';
+import './sass/style.scss';
 
 
 TweenMax.to('.b1' , 1, {
