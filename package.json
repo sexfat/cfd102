@@ -1,0 +1,23 @@
+{
+  "name": "cfd102",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sexfat/cfd102.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sexfat/cfd102/issues"
+  },
+  "homepage": "https://github.com/sexfat/cfd102#readme",
+  "devDependencies": {
+    "webpack": "^4.43.0"
+  }
+}
