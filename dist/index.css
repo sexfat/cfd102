@@ -1,14 +1,4 @@
-.wrapper {
-  width: 1200px;
-  margin: 0 auto;
-  height: 500px;
-  background-color: #5cbbff; }
-  .wrapper h1 {
-    font-size: 30px;
-    color: #333; }
+.wrapper{width:1200px;margin:0 auto;height:500px;background-color:#5cbbff}.wrapper h1{font-size:30px;color:#333}
 
-header {
-  width: 100%;
-  height: 100px;
-  background-color: #fe4c00; }
+header{width:100%;height:100px;background-color:#fe4c00}
 

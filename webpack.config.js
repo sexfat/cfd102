@@ -32,6 +32,11 @@ module.exports = {
             filename: "./[name].css" // 打包出來的檔案
         })
     ],            // 對應的插件
+    resolve: {
+        alias: {
+           vue: 'vue/dist/vue.js'
+        }
+      },
     //devServer: {},           // 服務器配置
-    mode: 'development'      // 開發模式配置 production / development  
+    mode: 'production'      // 開發模式配置 production / development  
 }
