@@ -37,6 +37,11 @@ module.exports = {
         new HtmlWebpackPlugin({
             chunks : ['index'],  //選擇注入資源 chunk
             inject  : 'body', //預設<body> js </body>  head or body
+            minify : false, // 壓縮html option
+            meta:{
+               viewport : 'width=device-width, initial-scale=1.0' 
+            },
+            favicon : './src/img/favicon.ico',
             template : './src/index.html',
             //來源
             filename : 'index.html'
