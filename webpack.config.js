@@ -1,14 +1,17 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+
 
 module.exports = {
     entry: {
-      index :'./scripts.js',
-      about :'./about.js' 
+      index :'./src/js/scripts.js',
+      about :'./src/js/about.js' 
     },               // 入口文件
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].js'
+        filename: 'js/[name].js'
     },// 出口文件
    module: {
         rules: [{
@@ -18,7 +21,7 @@ module.exports = {
             use: [{
                 loader: MiniCssExtractPlugin.loader,
                 options: {
-                  publicPath: './dist'
+                  publicPath: './dist/'
                 }
               },
                 'css-loader',
@@ -29,7 +32,23 @@ module.exports = {
     },            // 處裡對應模組
     plugins: [
         new MiniCssExtractPlugin({
-            filename: "./[name].css" // 打包出來的檔案
+            filename: "./css/[name].css" // 打包出來的檔案
+        }),
+        new HtmlWebpackPlugin({
+            chunks : ['index'],  //選擇注入資源 chunk
+            inject  : 'body', //預設<body> js </body>  head or body
+            template : './src/index.html',
+            //來源
+            filename : 'index.html'
+            // 目的地
+        }),
+        new HtmlWebpackPlugin({
+            chunks : ['about'],  //選擇注入資源 chunk
+            inject  : 'body', //預設<body> js </body>  head or body
+            template : './src/about.html',
+            //來源
+            filename : 'about.html'
+            // 目的地
         })
     ],            // 對應的插件
     resolve: {
@@ -38,5 +57,5 @@ module.exports = {
         }
       },
     //devServer: {},           // 服務器配置
-    mode: 'production'      // 開發模式配置 production / development  
+    mode: 'development'      // 開發模式配置 production / development  
 }

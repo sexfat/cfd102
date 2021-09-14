@@ -1,6 +1,6 @@
 import $ from 'jquery';
-import './sass/style.scss';
-import './sass/header.scss';
+import '../sass/style.scss';
+import '../sass/header.scss';
 
 $('body').css('background-color' , '#e2e2e2');
 
