@@ -1,4 +1,6 @@
 import $ from 'jquery';
+import './css/style.css';
+import './css/header.css';
 
 $('body').css('background-color' , '#e2e2e2');
 
